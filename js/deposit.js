@@ -1,28 +1,45 @@
-document.getElementById('btn-deposit').addEventListener('click', function(){
-    //deposit
-    const depositField = document.getElementById('deposit-amount');
-    const newDepositAmountString = depositField.value;
-    const newDepositAmount = parseFloat(newDepositAmountString);
+document.getElementById('btn-deposit').addEventListener('click', function () {
 
-    const depositTotalElement = document.getElementById('deposit-total');
-    const previousDepositTotalString = depositTotalElement.innerText;
+    const newDepositAmount = getInputFieldValueById('deposit-field');
+    const previousDepositTotal = getTextElementValueById('deposit-total');
+    const newDepositTotal = previousDepositTotal + newDepositAmount;
+    setTextElementValueById('deposit-total', newDepositTotal);
 
-    const previousDepositTotal = parseFloat(previousDepositTotalString);
+    const previousBalanceTotal = getTextElementValueById('balance-total');
+    const newBalanceTotal = previousBalanceTotal + newDepositAmount;
+    setTextElementValueById('balance-total', newBalanceTotal);
 
-    const currentDepositTotal = previousDepositTotal + newDepositAmount;
 
-    depositTotalElement.innerText = currentDepositTotal;
 
-    depositField.value = '';
 
-    //balance
 
-    const balanceTotalElement = document.getElementById('balance-total');
-    const previousBalanceTotalString = balanceTotalElement.innerText;
-    const previousBalanceTotal = parseFloat(previousBalanceTotalString);
+    // //deposit
+    // const depositField = document.getElementById('deposit-amount');
+    // const newDepositAmountString = depositField.value;
+    // const newDepositAmount = parseFloat(newDepositAmountString);
 
-    const currentBalanceTotal = previousBalanceTotal + newDepositAmount;
+    // depositField.value = '';
 
-    balanceTotalElement.innerText = currentBalanceTotal;
-    
+    // if(isNaN(newDepositAmount)){
+    //     alert('Please provide a valid amount');
+    //     return;
+    // }
+
+    // const depositTotalElement = document.getElementById('deposit-total');
+    // const previousDepositTotalString = depositTotalElement.innerText;
+    // const previousDepositTotal = parseFloat(previousDepositTotalString);
+
+    // const currentDepositTotal = previousDepositTotal + newDepositAmount;
+    // depositTotalElement.innerText = currentDepositTotal;
+
+    // //balance
+
+    // const balanceTotalElement = document.getElementById('balance-total');
+    // const previousBalanceTotalString = balanceTotalElement.innerText;
+    // const previousBalanceTotal = parseFloat(previousBalanceTotalString);
+
+    // const currentBalanceTotal = previousBalanceTotal + newDepositAmount;
+
+    // balanceTotalElement.innerText = currentBalanceTotal;
+
 })
