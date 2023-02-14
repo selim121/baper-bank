@@ -1,6 +1,9 @@
 document.getElementById('btn-withdraw').addEventListener('click', function () {
 
     const newWithdrawAmount = getInputFieldValueById('withdraw-amount');
+    if(!newWithdrawAmount){
+        return;
+    }
     const previousWithdrawTotal = getTextElementValueById('withdraw-total');
     const newWithdrawTotal = previousWithdrawTotal + newWithdrawAmount;
     

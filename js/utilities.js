@@ -5,7 +5,7 @@ function getInputFieldValueById(inputFieldId) {
     
     if (isNaN(inputFieldValue)) {
         alert('Please provide a valid amount');
-        return;
+        return false;
     } else {
         inputField.value = '';
         return inputFieldValue;
